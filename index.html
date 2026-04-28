@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pankaj Joshi — ML / AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --bg2: #edecea;
+    --ink: #1c1c1e;
+    --ink2: #4a4a52;
+    --accent: #2d5f8a;
+    --accent2: #c8753a;
+    --border: #d4d2cc;
+    --card: #ffffff;
+    --tag-bg: #e8edf2;
+    --tag-ink: #2d5f8a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245,244,240,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 58px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink2); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 1100px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+  }
+  h1 em { color: var(--accent); font-style: italic; }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--ink2); max-width: 560px;
+    margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px; font-size: 0.85rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s; letter-spacing: 0.01em;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary {
+    background: var(--accent); color: #fff; border: 1.5px solid var(--accent);
+  }
+  .btn-primary:hover { background: #234d72; border-color: #234d72; }
+  .btn-outline {
+    background: transparent; color: var(--ink); border: 1.5px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-scroll {
+    margin-top: 4rem;
+    font-family: 'DM Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.1em; color: var(--border); text-transform: uppercase;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .hero-scroll::after {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--border);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine { 0%,100%{width:40px} 50%{width:70px} }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.02em; margin-bottom: 2.5rem;
+    line-height: 1.1;
+  }
+  .divider {
+    border: none; border-top: 1px solid var(--border);
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  /* ── EDUCATION ── */ */
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    display: flex; gap: 2rem; align-items: flex-start;
+  }
+  .edu-icon {
+    width: 48px; height: 48px; border-radius: 8px;
+    background: var(--tag-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .edu-info h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; margin-bottom: 0.25rem;
+  }
+  .edu-info .edu-inst {
+    color: var(--accent); font-weight: 500; font-size: 0.9rem; margin-bottom: 0.4rem;
+  }
+  .edu-info .edu-meta {
+    font-size: 0.82rem; color: var(--ink2);
+    font-family: 'DM Mono', monospace; letter-spacing: 0.04em;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.5rem;
+  }
+  .skill-group h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 1rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    background: var(--tag-bg); color: var(--tag-ink);
+    padding: 0.3rem 0.75rem; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.8rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-num {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem;
+    color: var(--border); letter-spacing: 0.1em; margin-bottom: 0.8rem;
+  }
+  .project-card h3 {
+    font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+    margin-bottom: 0.6rem; line-height: 1.2;
+  }
+  .project-card p {
+    font-size: 0.88rem; color: var(--ink2); line-height: 1.65;
+    flex: 1; margin-bottom: 1.2rem;
+  }
+  .project-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tags .tag { font-size: 0.72rem; }
+  .project-link {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem;
+    color: var(--accent); text-decoration: none; letter-spacing: 0.06em;
+    white-space: nowrap; margin-left: 0.5rem;
+    transition: color 0.2s;
+  }
+  .project-link:hover { color: var(--accent2); }
+
+  /* ── LEADERSHIP ── */
+  .leadership-list { display: flex; flex-direction: column; gap: 1px; }
+  .leadership-item {
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 1.5rem; align-items: center;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+  }
+  .leadership-item:last-child { border-bottom: none; }
+  .l-year {
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    color: var(--accent); letter-spacing: 0.1em; width: 60px;
+  }
+  .l-content h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .l-content p { font-size: 0.85rem; color: var(--ink2); }
+  .l-badge {
+    background: var(--tag-bg); color: var(--tag-ink);
+    padding: 0.25rem 0.7rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 500; white-space: nowrap;
+  }
+  .l-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 0.4rem;
+    font-size: 0.8rem; color: var(--accent); text-decoration: none;
+    font-family: 'DM Mono', monospace; letter-spacing: 0.04em;
+  }
+  .l-link:hover { color: var(--accent2); }
+
+  /* ── TOOLS ── */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+  .tool-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.4rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: inherit;
+    transition: all 0.2s;
+  }
+  .tool-card:hover { border-color: var(--accent); color: var(--accent); }
+  .tool-card-left { display: flex; align-items: center; gap: 0.8rem; }
+  .tool-icon { font-size: 1.2rem; }
+  .tool-card h4 { font-size: 0.9rem; font-weight: 500; }
+  .tool-arrow {
+    font-family: 'DM Mono', monospace; font-size: 0.9rem;
+    color: var(--border); transition: color 0.2s;
+  }
+  .tool-card:hover .tool-arrow { color: var(--accent); }
+
+  /* ── CONTACT ── */
+  .contact-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .contact-left h2 { margin-bottom: 1rem; }
+  .contact-left p { color: var(--ink2); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none; color: var(--ink);
+    padding: 1rem 1.2rem; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--card);
+    font-size: 0.9rem; transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+  .contact-link-icon { font-size: 1.2rem; }
+  .contact-right {
+    background: var(--ink); border-radius: 10px;
+    padding: 2.5rem; color: #fff;
+  }
+  .contact-right h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;
+  }
+  .contact-right p { font-size: 0.88rem; color: #9999a8; margin-bottom: 1.5rem; }
+  .contact-email {
+    font-family: 'DM Mono', monospace; font-size: 0.85rem;
+    color: #a8c4dc; letter-spacing: 0.04em;
+    word-break: break-all;
+  }
+  .contact-email a { color: inherit; text-decoration: none; }
+  .contact-email a:hover { color: #fff; }
+  .social-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
+  .social-btn {
+    padding: 0.5rem 1rem; border-radius: 4px;
+    border: 1px solid #3a3a4a; color: #9999a8;
+    text-decoration: none; font-size: 0.8rem; font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .social-btn:hover { border-color: #a8c4dc; color: #a8c4dc; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink2);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── FADE-IN ── */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: fixed;
+      top: 58px; left: 0; right: 0;
+      background: var(--bg); padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border); gap: 1.2rem;
+    }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    .facts-strip { flex-direction: column; }
+    .fact-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .fact-item:last-child { border-bottom: none; }
+    .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .leadership-item { grid-template-columns: auto 1fr; }
+    .l-badge { display: none; }
+    .edu-card { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">PJ<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-eyebrow">Hello from !</div>
+  <h1>Pankaj Joshi<em>.</em></h1>
+  <p class="hero-sub">
+    Final year student interested in machine learning, deep learning, and building things. Working on NLP, CV, and full-stack applications.
+  </p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-primary">View Projects →</a>
+    <a href="https://github.com/pankuzj" target="_blank" class="btn btn-outline">GitHub</a>
+    <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="btn btn-outline">LinkedIn</a>
+    <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="btn btn-outline">LeetCode</a>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</div>
+
+<hr class="divider"/>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <div class="section-label">01 — Skills</div>
+  <h2>Skills.</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Languages</h4>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Bash</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>ML / AI</h4>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">LightGBM</span>
+        <span class="tag">TF-IDF / NLP</span>
+        <span class="tag">Transformers</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Data</h4>
+      <div class="skill-tags">
+        <span class="tag">NumPy</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Seaborn</span>
+        <span class="tag">W&amp;B</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Web / Infra</h4>
+      <div class="skill-tags">
+        <span class="tag">Flask</span>
+        <span class="tag">Vue.js</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Celery</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Linux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EDUCATION -->
+<section id="education" class="fade-in">
+  <div class="section-label">02 — Education</div>
+  <h2>Education.</h2>
+  <div class="edu-card">
+    <div class="edu-icon">🎓</div>
+    <div class="edu-info">
+      <h3>BS in Data Science &amp; Applications</h3>
+      <div class="edu-inst">Indian Institute of Technology Madras</div>
+      <div class="edu-meta">Expected April 2027</div>
+      <p style="margin-top:0.8rem;font-size:0.88rem;color:var(--ink2);max-width:600px">
+        Coursework spanning statistics, machine learning, deep learning, algorithms, and application development. Tracks in NLP, computer vision, and generative AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <div class="section-label">03 — Projects</div>
+  <div class="projects-grid">
+
+    <a href="https://github.com/pankuzj/comment-category-classification" target="_blank" class="project-card">
+      <div class="project-num">01 / NLP</div>
+      <h3>Comment Category Classification</h3>
+      <p>End-to-end ML pipeline classifying 198,000 user comments into 4 categories (general, identity/hate, political, violent). Handled severe 20.9× class imbalance. Progressed from Logistic Regression → Random Forest → LightGBM with hyperparameter tuning. Built on Kaggle.</p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">LightGBM</span>
+          <span class="tag">TF-IDF</span>
+          <span class="tag">scikit-learn</span>
+        </div>
+        <span class="project-link">↗ GitHub</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/pankuzj/DL_GenAI_2026" target="_blank" class="project-card">
+      <div class="project-num">02 / Deep Learning</div>
+      <h3>Music Genre Classification — Messy Mashup</h3>
+      <p>Classified audio into 10 genres from noisy mashups (ESC-50 noise overlay). Trained Simple CNN → ResNet-style CNN → AST (Audio Spectrogram Transformer). Final ensemble (AST × 0.75 + ResNet × 0.25) achieving ~0.85 val macro-F1. All runs tracked on W&amp;B.</p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">Transformers</span>
+          <span class="tag">librosa</span>
+          <span class="tag">W&amp;B</span>
+        </div>
+        <span class="project-link">↗ GitHub</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/pankuzj/mymad1p" target="_blank" class="project-card">
+      <div class="project-num">03 / Full Stack</div>
+      <h3>Placement Portal v1</h3>
+      <p>Web-based placement management system connecting students, companies, and admins. Role-based access, resume upload, drive approval workflow, application tracking. Built with Flask, SQLite, and Bootstrap. Course project for Modern Application Development.</p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="tag">Flask</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Python</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+        <span class="project-link">↗ GitHub</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/pankuzj/mymad2p" target="_blank" class="project-card">
+      <div class="project-num">04 / Full Stack</div>
+      <h3>Placement Portal v2</h3>
+      <p>Production-grade rebuild with Vue 3 frontend and Flask-RESTful backend. Added Redis caching, Celery async jobs, scheduled deadline reminders, CSV export with email alerts, token-based auth via Flask-Security, and a Pinia message store. 6 concurrent services.</p>
+      <div class="project-footer">
+        <div class="project-tags">
+          <span class="tag">Vue 3</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Celery</span>
+        </div>
+        <span class="project-link">↗ GitHub</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="fade-in">
+  <div class="section-label">04 — Leadership</div>
+  <h2>Leadership.</h2>
+  <div class="leadership-list">
+    <div class="leadership-item">
+      <div class="l-year">2024–25</div>
+      <div class="l-content">
+        <h4>Secretary — Namdapha House, IIT Madras</h4>
+        <p>Elected secretary of Namdapha House, the student community of IIT Madras BS Degree, representing 3900+ students across India. Organised academic support, events, hackathons, and cross-community initiatives.</p>
+        <a href="#" class="l-link" title="Docs / Evidence (placeholder)">↗ View docs</a>
+      </div>
+      <span class="l-badge">Elected</span>
+    </div>
+    <div class="leadership-item">
+      <div class="l-year">2023–24</div>
+      <div class="l-content">
+        <h4>Web Admin — Namdapha House, IIT Madras</h4>
+        <p>Managed the digital presence and web infrastructure of Namdapha House. Maintained community platforms and supported online events for a house of thousands of students spread across India.</p>
+        <a href="#" class="l-link" title="Docs / Evidence (placeholder)">↗ View docs</a>
+      </div>
+      <span class="l-badge">Appointed</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- TOOLS -->
+<section id="tools" class="fade-in">
+  <div class="section-label">05 — Tools</div>
+  <h2>Tools.</h2>
+  <div class="tools-grid">
+    <a href="#" class="tool-card">
+      <div class="tool-card-left"><span class="tool-icon">📄</span><h4>PDF Converter</h4></div>
+      <span class="tool-arrow">↗</span>
+    </a>
+    <a href="#" class="tool-card">
+      <div class="tool-card-left"><span class="tool-icon">🔗</span><h4>Link Shortener</h4></div>
+      <span class="tool-arrow">↗</span>
+    </a>
+    <a href="#" class="tool-card">
+      <div class="tool-card-left"><span class="tool-icon">📊</span><h4>CSV Explorer</h4></div>
+      <span class="tool-arrow">↗</span>
+    </a>
+    <a href="#" class="tool-card">
+      <div class="tool-card-left"><span class="tool-icon">🤖</span><h4>Text Classifier</h4></div>
+      <span class="tool-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <div class="section-label">06 — Contact</div>
+      <h2>Contact.</h2>
+      <p>Looking for full-time ML / data science. Feel free to reach out.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">💼</span> linkedin.com/in/pankuz
+        </a>
+        <a href="https://github.com/pankuzj" target="_blank" class="contact-link">
+          <span class="contact-link-icon">⌨️</span> github.com/pankuzj
+        </a>
+        <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🧩</span> leetcode.com/u/pankaj131
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Email</h3>
+      <p>I check regularly and respond promptly.</p>
+      <div class="contact-email">
+        <a href="mailto:joshipankaj159753@gmail.com">joshipankaj159753@gmail.com</a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/pankuzj" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="social-btn">LeetCode</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Pankaj Joshi ·
+</footer>
+
+<script>
+  // Hamburger
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Close nav on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id], div[id="hero"]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
