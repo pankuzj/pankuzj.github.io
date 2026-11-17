@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS9GEQLRLC"></script>
 <script>
@@ -10,651 +12,816 @@
 
   gtag('config', 'G-LS9GEQLRLC');
 </script>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pankaj Joshi — ML / AI Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --bg: #f5f4f0;
-    --bg2: #edecea;
-    --ink: #1c1c1e;
-    --ink2: #4a4a52;
-    --accent: #2d5f8a;
-    --accent2: #c8753a;
-    --border: #d4d2cc;
-    --card: #ffffff;
-    --tag-bg: #e8edf2;
-    --tag-ink: #2d5f8a;
-  }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <title>Pankaj Joshi — Machine Learning &amp; MLOps Engineer</title>
+  <meta name="description" content="Personal portfolio of Pankaj Joshi, a Machine Learning and MLOps Engineer completing a BS in Data Science &amp; Applications at IIT Madras.">
 
-  html { scroll-behavior: smooth; }
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pankaj Joshi — Machine Learning &amp; MLOps Engineer">
+  <meta property="og:description" content="Machine Learning &amp; MLOps Engineer experienced across statistical modeling, Transformer architectures, low-latency model serving, and automated MLOps pipelines.">
+  <!-- TODO: Verify your custom domain URL (profile_info.txt listed "https://pankuz,in" with a comma) -->
+  <meta property="og:url" content="https://pankuz.in/">
+  <meta property="og:image" content="https://pankuz.in/avatar.jpg">
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111827'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23f9fafb' font-family='monospace' font-size='14' font-weight='700'%3EPJ%3C/text%3E%3C/svg%3E">
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(245,244,240,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 58px;
-  }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
-    text-transform: uppercase; color: var(--ink2); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
+  <!-- Optional single font dependency for crisp technical metadata -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 2rem 4rem;
-    max-width: 1100px; margin: 0 auto;
-    position: relative;
-  }
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1.4rem;
-    display: flex; align-items: center; gap: 0.7rem;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block; width: 32px; height: 1px; background: var(--accent);
-  }
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    color: var(--ink);
-    margin-bottom: 1.2rem;
-  }
-  h1 em { color: var(--accent); font-style: italic; }
-  .hero-sub {
-    font-size: 1.1rem; color: var(--ink2); max-width: 560px;
-    margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7;
-  }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.65rem 1.4rem;
-    border-radius: 4px; font-size: 0.85rem; font-weight: 500;
-    text-decoration: none; transition: all 0.2s; letter-spacing: 0.01em;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .btn-primary {
-    background: var(--accent); color: #fff; border: 1.5px solid var(--accent);
-  }
-  .btn-primary:hover { background: #234d72; border-color: #234d72; }
-  .btn-outline {
-    background: transparent; color: var(--ink); border: 1.5px solid var(--border);
-  }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-scroll {
-    margin-top: 4rem;
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.1em; color: var(--border); text-transform: uppercase;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .hero-scroll::after {
-    content: ''; display: block; width: 40px; height: 1px; background: var(--border);
-    animation: scrollLine 2s ease-in-out infinite;
-  }
-  @keyframes scrollLine { 0%,100%{width:40px} 50%{width:70px} }
-
-  /* ── SECTIONS ── */
-  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent2); margin-bottom: 0.5rem;
-  }
-  h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    letter-spacing: -0.02em; margin-bottom: 2.5rem;
-    line-height: 1.1;
-  }
-  .divider {
-    border: none; border-top: 1px solid var(--border);
-    max-width: 1100px; margin: 0 auto;
-  }
-
-  /* ── EDUCATION ── */ */
-  .edu-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2rem 2.5rem;
-    display: flex; gap: 2rem; align-items: flex-start;
-  }
-  .edu-icon {
-    width: 48px; height: 48px; border-radius: 8px;
-    background: var(--tag-bg);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; flex-shrink: 0;
-  }
-  .edu-info h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.3rem; margin-bottom: 0.25rem;
-  }
-  .edu-info .edu-inst {
-    color: var(--accent); font-weight: 500; font-size: 0.9rem; margin-bottom: 0.4rem;
-  }
-  .edu-info .edu-meta {
-    font-size: 0.82rem; color: var(--ink2);
-    font-family: 'DM Mono', monospace; letter-spacing: 0.04em;
-  }
-
-  /* ── SKILLS ── */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-  .skill-group {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.5rem;
-  }
-  .skill-group h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent2); margin-bottom: 1rem;
-  }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .tag {
-    background: var(--tag-bg); color: var(--tag-ink);
-    padding: 0.3rem 0.75rem; border-radius: 100px;
-    font-size: 0.8rem; font-weight: 500;
-  }
-
-  /* ── PROJECTS ── */
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-  .project-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.8rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex; flex-direction: column;
-    text-decoration: none; color: inherit;
-    position: relative; overflow: hidden;
-  }
-  .project-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent); transform: scaleX(0); transform-origin: left;
-    transition: transform 0.3s;
-  }
-  .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-  .project-card:hover::before { transform: scaleX(1); }
-  .project-num {
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    color: var(--border); letter-spacing: 0.1em; margin-bottom: 0.8rem;
-  }
-  .project-card h3 {
-    font-family: 'DM Serif Display', serif; font-size: 1.2rem;
-    margin-bottom: 0.6rem; line-height: 1.2;
-  }
-  .project-card p {
-    font-size: 0.88rem; color: var(--ink2); line-height: 1.65;
-    flex: 1; margin-bottom: 1.2rem;
-  }
-  .project-footer { display: flex; justify-content: space-between; align-items: flex-end; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .project-tags .tag { font-size: 0.72rem; }
-  .project-link {
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    color: var(--accent); text-decoration: none; letter-spacing: 0.06em;
-    white-space: nowrap; margin-left: 0.5rem;
-    transition: color 0.2s;
-  }
-  .project-link:hover { color: var(--accent2); }
-
-  /* ── LEADERSHIP ── */
-  .leadership-list { display: flex; flex-direction: column; gap: 1px; }
-  .leadership-item {
-    display: grid; grid-template-columns: auto 1fr auto;
-    gap: 1.5rem; align-items: center;
-    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
-  }
-  .leadership-item:last-child { border-bottom: none; }
-  .l-year {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    color: var(--accent); letter-spacing: 0.1em; width: 60px;
-  }
-  .l-content h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
-  .l-content p { font-size: 0.85rem; color: var(--ink2); }
-  .l-badge {
-    background: var(--tag-bg); color: var(--tag-ink);
-    padding: 0.25rem 0.7rem; border-radius: 100px;
-    font-size: 0.75rem; font-weight: 500; white-space: nowrap;
-  }
-  .l-link {
-    display: inline-flex; align-items: center; gap: 0.3rem;
-    margin-top: 0.4rem;
-    font-size: 0.8rem; color: var(--accent); text-decoration: none;
-    font-family: 'DM Mono', monospace; letter-spacing: 0.04em;
-  }
-  .l-link:hover { color: var(--accent2); }
-
-  /* ── TOOLS ── */
-  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-  .tool-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.4rem 1.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    text-decoration: none; color: inherit;
-    transition: all 0.2s;
-  }
-  .tool-card:hover { border-color: var(--accent); color: var(--accent); }
-  .tool-card-left { display: flex; align-items: center; gap: 0.8rem; }
-  .tool-icon { font-size: 1.2rem; }
-  .tool-card h4 { font-size: 0.9rem; font-weight: 500; }
-  .tool-arrow {
-    font-family: 'DM Mono', monospace; font-size: 0.9rem;
-    color: var(--border); transition: color 0.2s;
-  }
-  .tool-card:hover .tool-arrow { color: var(--accent); }
-
-  /* ── CONTACT ── */
-  .contact-wrap {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-  }
-  .contact-left h2 { margin-bottom: 1rem; }
-  .contact-left p { color: var(--ink2); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 1rem;
-    text-decoration: none; color: var(--ink);
-    padding: 1rem 1.2rem; border: 1px solid var(--border);
-    border-radius: 6px; background: var(--card);
-    font-size: 0.9rem; transition: all 0.2s;
-  }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
-  .contact-link-icon { font-size: 1.2rem; }
-  .contact-right {
-    background: var(--ink); border-radius: 10px;
-    padding: 2.5rem; color: #fff;
-  }
-  .contact-right h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;
-  }
-  .contact-right p { font-size: 0.88rem; color: #9999a8; margin-bottom: 1.5rem; }
-  .contact-email {
-    font-family: 'DM Mono', monospace; font-size: 0.85rem;
-    color: #a8c4dc; letter-spacing: 0.04em;
-    word-break: break-all;
-  }
-  .contact-email a { color: inherit; text-decoration: none; }
-  .contact-email a:hover { color: #fff; }
-  .social-row { display: flex; gap: 1rem; margin-top: 1.5rem; }
-  .social-btn {
-    padding: 0.5rem 1rem; border-radius: 4px;
-    border: 1px solid #3a3a4a; color: #9999a8;
-    text-decoration: none; font-size: 0.8rem; font-family: 'DM Mono', monospace;
-    letter-spacing: 0.06em; transition: all 0.2s;
-  }
-  .social-btn:hover { border-color: #a8c4dc; color: #a8c4dc; }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.78rem;
-    color: var(--ink2);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.06em;
-  }
-
-  /* ── FADE-IN ── */
-  .fade-in {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .nav-links { display: none; flex-direction: column; position: fixed;
-      top: 58px; left: 0; right: 0;
-      background: var(--bg); padding: 1.5rem 2rem;
-      border-bottom: 1px solid var(--border); gap: 1.2rem;
+  <style>
+    /* =========================================================================
+       COLOR PALETTE & TYPOGRAPHY VARIABLES
+       ========================================================================= */
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-alt: #f4f4f5;
+      --text: #111827;
+      --text-secondary: #374151;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --border-strong: #d1d5db;
+      --accent: #1d4ed8;
+      --tag-bg: #f3f4f6;
+      --tag-text: #1f2937;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
-    .nav-links.open { display: flex; }
-    .hamburger { display: flex; }
-    .facts-strip { flex-direction: column; }
-    .fact-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .fact-item:last-child { border-bottom: none; }
-    .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
-    .leadership-item { grid-template-columns: auto 1fr; }
-    .l-badge { display: none; }
-    .edu-card { flex-direction: column; }
-  }
-</style>
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0c0d10;
+        --surface: #13151a;
+        --surface-alt: #1a1d24;
+        --text: #f3f4f6;
+        --text-secondary: #d1d5db;
+        --text-muted: #9ca3af;
+        --border: #23262f;
+        --border-strong: #323642;
+        --accent: #60a5fa;
+        --tag-bg: #1c1f26;
+        --tag-text: #d1d5db;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0c0d10;
+      --surface: #13151a;
+      --surface-alt: #1a1d24;
+      --text: #f3f4f6;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      --border: #23262f;
+      --border-strong: #323642;
+      --accent: #60a5fa;
+      --tag-bg: #1c1f26;
+      --tag-text: #d1d5db;
+    }
+
+    /* =========================================================================
+       BASE & LAYOUT
+       ========================================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: auto;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      padding: 0 1.25rem 4.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* =========================================================================
+       TOP BAR
+       ========================================================================= */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.75rem;
+    }
+
+    .topbar-brand {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .topbar-nav {
+      display: none;
+      list-style: none;
+      gap: 1.15rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+
+    .topbar-nav a {
+      color: var(--text-muted);
+    }
+
+    .topbar-nav a:hover {
+      color: var(--text);
+    }
+
+    @media (min-width: 600px) {
+      .topbar-nav {
+        display: flex;
+      }
+    }
+
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    /* =========================================================================
+       HEADER / INTRO
+       ========================================================================= */
+    header {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-row {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 1px solid var(--border-strong);
+      background-color: var(--surface-alt);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .role {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .bio {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .link-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .link-btn {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.38rem 0.75rem;
+      border-radius: 5px;
+    }
+
+    .link-btn:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-alt);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .link-btn--primary {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* =========================================================================
+       SECTIONS
+       ========================================================================= */
+    section {
+      padding: 2.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .section-index {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================================
+       PROJECTS
+       ========================================================================= */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem 1.35rem;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .project-top {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.55rem;
+    }
+
+    @media (min-width: 560px) {
+      .project-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+      }
+    }
+
+    .project-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      flex-shrink: 0;
+    }
+
+    .project-role {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .project-desc {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.38rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.16rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    /* =========================================================================
+       EXPERIENCE & LEADERSHIP (2-column date + details on desktop)
+       ========================================================================= */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    @media (min-width: 600px) {
+      .entry {
+        grid-template-columns: 165px 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .entry-date {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      padding-top: 0.15rem;
+    }
+
+    .entry-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .entry-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .entry-desc {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    ul.bullets {
+      padding-left: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    ul.bullets li {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.45rem;
+    }
+
+    ul.bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================================
+       EDUCATION & CERTIFICATION
+       ========================================================================= */
+    .edu-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .coursework {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================================================
+       SKILLS (Clean 2-column grid)
+       ========================================================================= */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem 2rem;
+      }
+    }
+
+    .skill-group {
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+    }
+
+    .skill-group h3 {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .skill-group p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* =========================================================================
+       FOOTER
+       ========================================================================= */
+    footer {
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">PJ<span>.</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#leadership">Leadership</a></li>
-    <li><a href="#tools">Tools</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div id="hero">
-  <div class="hero-eyebrow">Hello from !</div>
-  <h1>Pankaj Joshi<em>.</em></h1>
-  <p class="hero-sub">
-    Final year student interested in machine learning, deep learning, and building things. Working on NLP, CV, and full-stack applications.
-  </p>
-  <div class="hero-btns">
-    <a href="#projects" class="btn btn-primary">View Projects →</a>
-    <a href="https://github.com/pankuzj" target="_blank" class="btn btn-outline">GitHub</a>
-    <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="btn btn-outline">LinkedIn</a>
-    <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="btn btn-outline">LeetCode</a>
-  </div>
-  <div class="hero-scroll">Scroll to explore</div>
-</div>
-
-<hr class="divider"/>
-
-<!-- SKILLS -->
-<section id="skills" class="fade-in">
-  <div class="section-label">01 — Skills</div>
-  <h2>Skills.</h2>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <h4>Languages</h4>
-      <div class="skill-tags">
-        <span class="tag">Python</span>
-        <span class="tag">SQL</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Bash</span>
+    <!-- =======================================================================
+         TOP NAVIGATION BAR
+         ======================================================================= -->
+    <div class="topbar">
+      <span class="topbar-brand">pankaj.joshi</span>
+      <div class="topbar-right">
+        <nav aria-label="Section navigation">
+          <ul class="topbar-nav">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" aria-pressed="false">
+          Dark
+        </button>
       </div>
     </div>
-    <div class="skill-group">
-      <h4>ML / AI</h4>
-      <div class="skill-tags">
-        <span class="tag">PyTorch</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">Deep Learning</span>
-        <span class="tag">LightGBM</span>
-        <span class="tag">TF-IDF / NLP</span>
-        <span class="tag">Transformers</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>Data</h4>
-      <div class="skill-tags">
-        <span class="tag">NumPy</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Matplotlib</span>
-        <span class="tag">Seaborn</span>
-        <span class="tag">W&amp;B</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <h4>Web / Infra</h4>
-      <div class="skill-tags">
-        <span class="tag">Flask</span>
-        <span class="tag">Vue.js</span>
-        <span class="tag">Redis</span>
-        <span class="tag">Celery</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">Linux</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<hr class="divider"/>
+    <!-- =======================================================================
+         HEADER: Photo, Name, Role, Short Bio, Links
+         ======================================================================= -->
+    <header>
+      <div class="intro-row">
+        <!-- Place optimized 240x240px avatar.jpg in the same directory as index.html -->
+        <img
+          src="avatar.jpg"
+          alt="Pankaj Joshi"
+          class="avatar"
+          width="80"
+          height="80"
+          loading="eager"
+          decoding="async"
+        >
+        <div>
+          <h1>Pankaj Joshi</h1>
+          <p class="role">Machine Learning &amp; MLOps Engineer</p>
+        </div>
+      </div>
 
-<!-- EDUCATION -->
-<section id="education" class="fade-in">
-  <div class="section-label">02 — Education</div>
-  <h2>Education.</h2>
-  <div class="edu-card">
-    <div class="edu-icon">🎓</div>
-    <div class="edu-info">
-      <h3>BS in Data Science &amp; Applications</h3>
-      <div class="edu-inst">Indian Institute of Technology Madras</div>
-      <div class="edu-meta">Expected April 2027</div>
-      <p style="margin-top:0.8rem;font-size:0.88rem;color:var(--ink2);max-width:600px">
-        Coursework spanning statistics, machine learning, deep learning, algorithms, and application development. Tracks in NLP, computer vision, and generative AI.
+      <p class="bio">
+        Applied Machine Learning and MLOps Engineer working across the full ML lifecycle—from statistical modeling and Transformer architectures to automated MLOps pipelines and low-latency cloud serving. Currently completing a BS in Data Science &amp; Applications at IIT Madras, with production internship experience in NLP classification and time-series forecasting.
       </p>
-    </div>
-  </div>
-</section>
 
-<hr class="divider"/>
+      <nav aria-label="External links">
+        <ul class="link-bar">
+          <li><a href="https://github.com/pankuzj" target="_blank" rel="noopener noreferrer" class="link-btn">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/pankuz/" target="_blank" rel="noopener noreferrer" class="link-btn">LinkedIn</a></li>
+          <li><a href="https://leetcode.com/u/pankaj131/" target="_blank" rel="noopener noreferrer" class="link-btn">LeetCode</a></li>
+          <li><a href="mailto:joshipankaj159753@gmail.com" class="link-btn link-btn--primary">joshipankaj159753@gmail.com</a></li>
+          <!-- TODO: Add link to your hosted Resume PDF later, e.g.:
+          <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="link-btn">Resume</a></li>
+          -->
+        </ul>
+      </nav>
+    </header>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade-in">
-  <div class="section-label">03 — Projects</div>
-  <div class="projects-grid">
-
-    <a href="https://github.com/pankuzj/comment-category-classification" target="_blank" class="project-card">
-      <div class="project-num">01 / NLP</div>
-      <h3>Comment Category Classification</h3>
-      <p>End-to-end ML pipeline classifying 198,000 user comments into 4 categories (general, identity/hate, political, violent). Handled severe 20.9× class imbalance. Progressed from Logistic Regression → Random Forest → LightGBM with hyperparameter tuning. Built on Kaggle.</p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">LightGBM</span>
-          <span class="tag">TF-IDF</span>
-          <span class="tag">scikit-learn</span>
+    <main>
+      <!-- =====================================================================
+           01. PROJECTS (Most relevant first)
+           ===================================================================== -->
+      <section id="projects" aria-labelledby="projects-heading">
+        <div class="section-head">
+          <h2 id="projects-heading">Projects</h2>
+          <span class="section-index">01</span>
         </div>
-        <span class="project-link">↗ GitHub</span>
-      </div>
-    </a>
 
-    <a href="https://github.com/pankuzj/DL_GenAI_2026" target="_blank" class="project-card">
-      <div class="project-num">02 / Deep Learning</div>
-      <h3>Music Genre Classification — Messy Mashup</h3>
-      <p>Classified audio into 10 genres from noisy mashups (ESC-50 noise overlay). Trained Simple CNN → ResNet-style CNN → AST (Audio Spectrogram Transformer). Final ensemble (AST × 0.75 + ResNet × 0.25) achieving ~0.85 val macro-F1. All runs tracked on W&amp;B.</p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="tag">PyTorch</span>
-          <span class="tag">Transformers</span>
-          <span class="tag">librosa</span>
-          <span class="tag">W&amp;B</span>
+        <div class="project-list">
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title">SmartSweep — Municipal Waste &amp; Sanitation Platform</h3>
+              <div class="project-links">
+                <a href="https://smartsweep-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+                <a href="https://github.com/pankuzj/SmartSweep" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+            <p class="project-role">Project Manager &amp; Core Backend/AI Developer · Led team of 5</p>
+            <p class="project-desc">
+              Civic-tech platform for reporting and dispatching municipal waste issues with multimodal Claude API hazard severity classification, Haversine geospatial duplicate detection, and RBAC task workflows.
+            </p>
+            <div class="tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Python 3.12</span>
+              <span class="tag">Anthropic Claude API</span>
+              <span class="tag">PostgreSQL 16</span>
+              <span class="tag">SQLAlchemy 2.0</span>
+              <span class="tag">Alembic</span>
+              <span class="tag">React 19</span>
+              <span class="tag">Docker</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title">EchoClass — Transformer-Based Audio Genre Classification</h3>
+              <div class="project-links">
+                <a href="https://huggingface.co/spaces/pakuz1/genai" target="_blank" rel="noopener noreferrer">HF Space</a>
+                <a href="https://github.com/pankuzj/EchoClass" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+            <p class="project-role">Deep Learning Engineer</p>
+            <p class="project-desc">
+              10-genre music classification pipeline resilient to ESC-50 environmental noise corruption, progressing from a baseline CNN (0.51 macro-F1) and ResNet (0.68) to an Audio Spectrogram Transformer ensemble (0.85).
+            </p>
+            <div class="tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Hugging Face Transformers</span>
+              <span class="tag">AST</span>
+              <span class="tag">ResNet</span>
+              <span class="tag">librosa</span>
+              <span class="tag">Weights &amp; Biases</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title">Comment Category Classification — Imbalanced Multiclass NLP</h3>
+              <div class="project-links">
+                <a href="https://github.com/pankuzj/nlp-classification" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+            <p class="project-role">Machine Learning Engineer</p>
+            <p class="project-desc">
+              End-to-end NLP pipeline classifying 198,000 comments across 4 categories under 20.9x class imbalance using cost-sensitive learning, TF-IDF lexical features, metadata engineering, and tuned LightGBM.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">LightGBM</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">TF-IDF</span>
+              <span class="tag">pandas</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3 class="project-title">Placement Portal v2 &amp; v1 — Distributed Web Application</h3>
+              <div class="project-links">
+                <a href="https://github.com/pankuzj/Placement_Portal_V2" target="_blank" rel="noopener noreferrer">GitHub (v2)</a>
+                <a href="https://github.com/pankuzj/Placement_Portal_V1" target="_blank" rel="noopener noreferrer">GitHub (v1)</a>
+              </div>
+            </div>
+            <p class="project-role">Full-Stack Developer</p>
+            <p class="project-desc">
+              Placement management architecture built with asynchronous Celery workers, Redis caching, JWT authentication, and scheduled report delivery.
+            </p>
+            <div class="tags">
+              <span class="tag">Vue 3</span>
+              <span class="tag">Flask-RESTful</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Celery</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">JWT</span>
+            </div>
+          </article>
+
         </div>
-        <span class="project-link">↗ GitHub</span>
-      </div>
-    </a>
+      </section>
 
-    <a href="https://github.com/pankuzj/mymad1p" target="_blank" class="project-card">
-      <div class="project-num">03 / Full Stack</div>
-      <h3>Placement Portal v1</h3>
-      <p>Web-based placement management system connecting students, companies, and admins. Role-based access, resume upload, drive approval workflow, application tracking. Built with Flask, SQLite, and Bootstrap. Course project for Modern Application Development.</p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="tag">Flask</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Python</span>
-          <span class="tag">Bootstrap</span>
+      <!-- =====================================================================
+           02. EXPERIENCE & LEADERSHIP (Reverse chronological)
+           ===================================================================== -->
+      <section id="experience" aria-labelledby="experience-heading">
+        <div class="section-head">
+          <h2 id="experience-heading">Experience &amp; Leadership</h2>
+          <span class="section-index">02</span>
         </div>
-        <span class="project-link">↗ GitHub</span>
-      </div>
-    </a>
 
-    <a href="https://github.com/pankuzj/mymad2p" target="_blank" class="project-card">
-      <div class="project-num">04 / Full Stack</div>
-      <h3>Placement Portal v2</h3>
-      <p>Production-grade rebuild with Vue 3 frontend and Flask-RESTful backend. Added Redis caching, Celery async jobs, scheduled deadline reminders, CSV export with email alerts, token-based auth via Flask-Security, and a Pinia message store. 6 concurrent services.</p>
-      <div class="project-footer">
-        <div class="project-tags">
-          <span class="tag">Vue 3</span>
-          <span class="tag">Flask</span>
-          <span class="tag">Redis</span>
-          <span class="tag">Celery</span>
+        <div class="timeline">
+
+          <article class="entry">
+            <div class="entry-date">Mar 2026 – Oct 2026<br>8 months</div>
+            <div>
+              <h3 class="entry-title">Machine Learning Engineer Intern</h3>
+              <ul class="bullets">
+                <li>Standardized three datasets across three ML projects, documented training schemas, and built automated validation checks flagging 2.9% of corrupted or outlier records.</li>
+                <li>Cleaned and preprocessed 23,500 support ticket records for classifier training by removing duplicates and filtering agent responses from model inputs.</li>
+                <li>Increased support ticket classification macro F1 by 4 percentage points on a chronological holdout set by replacing logistic regression with an optimized linear SVM.</li>
+                <li>Reduced one-week-ahead order forecast MAE by 9% across 10 product categories using gradient boosted decision trees (GBDT) benchmarked against a 4-week moving-average baseline.</li>
+                <li>Served the TF-IDF and SVM inference pipeline via a containerized Docker + FastAPI endpoint, achieving 70 ms p95 latency on CPU across 700–900 concurrent test requests.</li>
+                <li>Implemented MLOps workflows using MLflow for experiment tracking and GitHub Actions CI/CD for automated regression testing and input schema validation on pull requests.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">2024 – 2025</div>
+            <div>
+              <h3 class="entry-title">Elected Secretary — Namdapha House, IIT Madras</h3>
+              <p class="entry-desc">
+                Represented and supported a student body of 3,900+ scholars across India; coordinated academic initiatives, hackathons, and community mentorship.
+              </p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">2023 – 2024</div>
+            <div>
+              <h3 class="entry-title">Appointed Web Admin — Namdapha House, IIT Madras</h3>
+              <p class="entry-desc">
+                Managed digital communication platforms and web infrastructure for the collegiate house.
+              </p>
+            </div>
+          </article>
+
         </div>
-        <span class="project-link">↗ GitHub</span>
-      </div>
-    </a>
+      </section>
+
+      <!-- =====================================================================
+           03. EDUCATION & CERTIFICATION
+           ===================================================================== -->
+      <section id="education" aria-labelledby="education-heading">
+        <div class="section-head">
+          <h2 id="education-heading">Education &amp; Certification</h2>
+          <span class="section-index">03</span>
+        </div>
+
+        <div class="edu-stack">
+
+          <article class="entry">
+            <div class="entry-date">Graduating 2026 / 2027</div>
+            <div>
+              <h3 class="entry-title">BS in Data Science &amp; Applications</h3>
+              <p class="entry-sub">Indian Institute of Technology Madras (IIT Madras)</p>
+              <p class="coursework">
+                Coursework: Deep Learning Practice (BSDA5013), Machine Learning Operations / MLOps (BSDA5014), Deep Learning Theory (BSCS3004), Machine Learning Practice &amp; Techniques, Modern Application Development (MAD I &amp; II).
+              </p>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-date">Certification</div>
+            <div>
+              <h3 class="entry-title">Business Analytics &amp; Text Mining Modeling Using Python</h3>
+              <p class="entry-sub">NPTEL</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           04. SKILLS (Plain grouped text list)
+           ===================================================================== -->
+      <section id="skills" aria-labelledby="skills-heading">
+        <div class="section-head">
+          <h2 id="skills-heading">Skills</h2>
+          <span class="section-index">04</span>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>LLM &amp; Deep Learning Math</h3>
+            <p>Scaled Dot-Product &amp; Multi-Head Attention, RoPE, Causal Masking, Pre-training Dynamics, Scaling Laws, PEFT / LoRA, Instruction Tuning, BPE / WordPiece / SentencePiece Tokenization.</p>
+          </div>
+
+          <div class="skill-group">
+            <h3>MLOps &amp; Cloud</h3>
+            <p>MLflow, Weights &amp; Biases (W&amp;B), DVC, CML, Feast, GCP, Vertex AI, Kubernetes (GKE), Cloud Run, Compute Engine, Docker, GitHub Actions CI/CD, Prometheus, Grafana, Evidently AI, vLLM, Guardrails.</p>
+          </div>
+
+          <div class="skill-group">
+            <h3>Applied DL &amp; Multimodal</h3>
+            <p>PyTorch, Hugging Face Transformers, Audio Spectrogram Transformer (AST), ResNet / CNNs, ASR / TTS, Speaker Diarization, Spoken Language ID, Wake-word Detection, Object Detection, Depth Estimation, Super-Resolution, librosa, STFT / MFCCs.</p>
+          </div>
+
+          <div class="skill-group">
+            <h3>Backend, Data &amp; Tabular ML</h3>
+            <p>Python 3.12, FastAPI, Flask-RESTful, Uvicorn / Gunicorn, PostgreSQL 16, SQLAlchemy 2.0, Alembic, Redis, Celery, SQLite, scikit-learn, LightGBM, TF-IDF, pandas, React 19, Vue 3.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =======================================================================
+         FOOTER
+         ======================================================================= -->
+    <footer>
+      <span>Pankaj Joshi &copy; 2026</span>
+      <span>Open to Remote / Hybrid / On-site (India &amp; Global)</span>
+    </footer>
 
   </div>
-</section>
 
-<hr class="divider"/>
+  <!-- =========================================================================
+       VANILLA JS: THEME TOGGLE ONLY
+       ========================================================================= -->
+  <script>
+    (function () {
+      var toggle = document.getElementById('themeToggle');
+      var root = document.documentElement;
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-<!-- LEADERSHIP -->
-<section id="leadership" class="fade-in">
-  <div class="section-label">04 — Leadership</div>
-  <h2>Leadership.</h2>
-  <div class="leadership-list">
-    <div class="leadership-item">
-      <div class="l-year">2024–25</div>
-      <div class="l-content">
-        <h4>Secretary — Namdapha House, IIT Madras</h4>
-        <p>Elected secretary of Namdapha House, the student community of IIT Madras BS Degree, representing 3900+ students across India. Organised academic support, events, hackathons, and cross-community initiatives.</p>
-        <a href="#" class="l-link" title="Docs / Evidence (placeholder)">↗ View docs</a>
-      </div>
-      <span class="l-badge">Elected</span>
-    </div>
-    <div class="leadership-item">
-      <div class="l-year">2023–24</div>
-      <div class="l-content">
-        <h4>Web Admin — Namdapha House, IIT Madras</h4>
-        <p>Managed the digital presence and web infrastructure of Namdapha House. Maintained community platforms and supported online events for a house of thousands of students spread across India.</p>
-        <a href="#" class="l-link" title="Docs / Evidence (placeholder)">↗ View docs</a>
-      </div>
-      <span class="l-badge">Appointed</span>
-    </div>
-  </div>
-</section>
+      function getActiveTheme() {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') return saved;
+        return prefersDark.matches ? 'dark' : 'light';
+      }
 
-<hr class="divider"/>
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        var isDark = theme === 'dark';
+        toggle.textContent = isDark ? 'Light' : 'Dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+      }
 
-<!-- TOOLS -->
-<section id="tools" class="fade-in">
-  <div class="section-label">05 — Tools</div>
-  <h2>Tools.</h2>
-  <div class="tools-grid">
-    <a href="#" class="tool-card">
-      <div class="tool-card-left"><span class="tool-icon">📄</span><h4>PDF Converter</h4></div>
-      <span class="tool-arrow">↗</span>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-card-left"><span class="tool-icon">🔗</span><h4>Link Shortener</h4></div>
-      <span class="tool-arrow">↗</span>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-card-left"><span class="tool-icon">📊</span><h4>CSV Explorer</h4></div>
-      <span class="tool-arrow">↗</span>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-card-left"><span class="tool-icon">🤖</span><h4>Text Classifier</h4></div>
-      <span class="tool-arrow">↗</span>
-    </a>
-  </div>
-</section>
+      applyTheme(getActiveTheme());
 
-<hr class="divider"/>
-
-<!-- CONTACT -->
-<section id="contact" class="fade-in">
-  <div class="contact-wrap">
-    <div class="contact-left">
-      <div class="section-label">06 — Contact</div>
-      <h2>Contact.</h2>
-      <p>Looking for full-time ML / data science. Feel free to reach out.</p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">💼</span> linkedin.com/in/pankuz
-        </a>
-        <a href="https://github.com/pankuzj" target="_blank" class="contact-link">
-          <span class="contact-link-icon">⌨️</span> github.com/pankuzj
-        </a>
-        <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">🧩</span> leetcode.com/u/pankaj131
-        </a>
-      </div>
-    </div>
-    <div class="contact-right">
-      <h3>Email</h3>
-      <p>I check regularly and respond promptly.</p>
-      <div class="contact-email">
-        <a href="mailto:joshipankaj159753@gmail.com">joshipankaj159753@gmail.com</a>
-      </div>
-      <div class="social-row">
-        <a href="https://github.com/pankuzj" target="_blank" class="social-btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/pankuz/" target="_blank" class="social-btn">LinkedIn</a>
-        <a href="https://leetcode.com/u/pankaj131/" target="_blank" class="social-btn">LeetCode</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Pankaj Joshi ·
-</footer>
-
-<script>
-  // Hamburger
-  function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-
-  // Close nav on link click (mobile)
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
-  });
-
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Active nav highlight
-  const sections = document.querySelectorAll('section[id], div[id="hero"]');
-  const navAs = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    navAs.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
-    });
-  });
-</script>
+      toggle.addEventListener('click', function () {
+        var next = getActiveTheme() === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        applyTheme(next);
+      });
+    })();
+  </script>
 </body>
 </html>
